@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,27 +20,22 @@ export default {
 		extend: {
 			colors: {
 				border: 'hsl(var(--border))',
-				'border-hover': 'hsl(var(--border-hover))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))',
-					hover: 'hsl(var(--primary-hover))'
+					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))',
-					hover: 'hsl(var(--secondary-hover))'
+					foreground: 'hsl(var(--secondary-foreground))'
 				},
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+				destructive: {
+					DEFAULT: 'hsl(var(--destructive))',
+					foreground: 'hsl(var(--destructive-foreground))'
 				},
-				'surface-glass': 'hsl(var(--surface-glass))',
-				'surface-elevated': 'hsl(var(--surface-elevated))',
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
@@ -50,58 +44,51 @@ export default {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
 				},
-				'bull-green': {
-					DEFAULT: 'hsl(var(--bull-green))',
-					light: 'hsl(var(--bull-green-light))'
+				popover: {
+					DEFAULT: 'hsl(var(--popover))',
+					foreground: 'hsl(var(--popover-foreground))'
 				},
-				'bear-red': {
-					DEFAULT: 'hsl(var(--bear-red))',
-					light: 'hsl(var(--bear-red-light))'
+				card: {
+					DEFAULT: 'hsl(var(--card))',
+					foreground: 'hsl(var(--card-foreground))'
 				},
-				'neutral-yellow': 'hsl(var(--neutral-yellow))',
-				success: 'hsl(var(--success))',
-				warning: 'hsl(var(--warning))',
-				error: 'hsl(var(--error))',
-				info: 'hsl(var(--info))'
+				sidebar: {
+					DEFAULT: 'hsl(var(--sidebar-background))',
+					foreground: 'hsl(var(--sidebar-foreground))',
+					primary: 'hsl(var(--sidebar-primary))',
+					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+					accent: 'hsl(var(--sidebar-accent))',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+					border: 'hsl(var(--sidebar-border))',
+					ring: 'hsl(var(--sidebar-ring))'
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
-			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'monospace']
-			},
-			backgroundImage: {
-				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-bull': 'var(--gradient-bull)',
-				'gradient-bear': 'var(--gradient-bear)',
-				'gradient-surface': 'var(--gradient-surface)',
-				'gradient-glass': 'var(--gradient-glass)'
-			},
-			boxShadow: {
-				'glow': 'var(--shadow-glow)',
-				'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+			keyframes: {
+				'accordion-down': {
+					from: {
+						height: '0'
+					},
+					to: {
+						height: 'var(--radix-accordion-content-height)'
+					}
+				},
+				'accordion-up': {
+					from: {
+						height: 'var(--radix-accordion-content-height)'
+					},
+					to: {
+						height: '0'
+					}
+				}
 			},
 			animation: {
-				'fade-in': 'fadeIn 0.5s ease-in-out',
-				'slide-up': 'slideUp 0.5s ease-out',
-				'pulse-glow': 'pulseGlow 2s ease-in-out infinite alternate'
-			},
-			keyframes: {
-				fadeIn: {
-					'0%': { opacity: '0' },
-					'100%': { opacity: '1' }
-				},
-				slideUp: {
-					'0%': { transform: 'translateY(20px)', opacity: '0' },
-					'100%': { transform: 'translateY(0)', opacity: '1' }
-				},
-				pulseGlow: {
-					'0%': { boxShadow: '0 0 20px hsla(217, 91%, 60%, 0.3)' },
-					'100%': { boxShadow: '0 0 30px hsla(217, 91%, 60%, 0.5)' }
-				}
+				'accordion-down': 'accordion-down 0.2s ease-out',
+				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
 	},
